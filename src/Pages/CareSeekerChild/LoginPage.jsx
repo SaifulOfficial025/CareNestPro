@@ -80,7 +80,7 @@ function LoginPage() {
         {/* Sign Up */}
         <p className="text-center text-sm text-gray-500 mt-6">
           Don’t have an account yet?{" "}
-          <Link to="/signup_care_seeker_elder">
+          <Link to="/signup_care_seeker_child">
             <span className="text-blue-500 hover:underline">
               Sign Up
             </span>

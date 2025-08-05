@@ -3,33 +3,36 @@ import React from "react";
 function CareProviderExperience({ formData, updateFormData, handleNext }) {
   return (
     <div className="w-full max-w-4xl mx-auto bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+      <div className="flex items-center mb-6">
+        <button onClick={() => window.history.back()} className="mr-4 text-gray-500 hover:text-gray-700">←</button>
+        <h3 className="text-lg text-gray-700 flex-1">Care provider Experience</h3>
+       
+        <span className="text-lg text-blue-500 font-bold">Step 3</span> <span className="ml-2 text-lg text-gray-500"> of 8</span>
+      </div>
       <div className="mb-6">
         <h4 className="text-base font-medium text-gray-800 mb-2">Details</h4>
-        <div className="flex justify-between items-center">
-          <p className="text-sm text-gray-500">Kindly select options to help us understand your preferences</p>
-          <span className="text-lg text-blue-500 font-bold">Step 3</span> <span className="ml-2 text-lg text-gray-500"> of 8</span>
-        </div>
+        <p className="text-sm text-gray-500 mb-6">Kindly select options to help us understand your preferences</p>
       </div>
 
       <div className="space-y-8">
         <div>
           <p className="text-sm text-gray-700 mb-4">
-            <strong>What qualities matter most to you in a care provider?</strong> Select the ones that feel right.
+            What qualities matter most to you in a care provider? <span className="font-normal">Select the ones that feel right.</span>
           </p>
           <div className="bg-white border border-gray-200 rounded-lg p-4">
             <div className="grid grid-cols-4 gap-4">
-              {['Gentle', 'Attentive', 'Responsible', 'Respectful'].map(quality => (
+              {['Patient', 'Nurturing', 'Observant', 'Reliable', 'Empathetic', 'Friendly', 'Calm', 'Supportive'].map(quality => (
                 <label key={quality} className="flex items-center">
                   <input 
                     type="checkbox" 
                     className="mr-2 bg-white text-gray-900"
-                    style={{ backgroundColor: '#fff', color: '#222' }}
-                    checked={formData.careProviderQualities.includes(quality)}
+                    checked={formData.careProviderQualities?.includes(quality)}
                     onChange={(e) => {
+                      let arr = Array.isArray(formData.careProviderQualities) ? formData.careProviderQualities : [];
                       if (e.target.checked) {
-                        updateFormData('careProviderQualities', [...formData.careProviderQualities, quality]);
+                        updateFormData('careProviderQualities', [...arr, quality]);
                       } else {
-                        updateFormData('careProviderQualities', formData.careProviderQualities.filter(q => q !== quality));
+                        updateFormData('careProviderQualities', arr.filter(q => q !== quality));
                       }
                     }}
                   />
@@ -42,26 +45,25 @@ function CareProviderExperience({ formData, updateFormData, handleNext }) {
 
         <div>
           <p className="text-sm text-gray-700 mb-4">
-            <strong>What qualities matter most to you in a care provider?</strong> Select the ones that feel right.
+            What qualities matter most to you in a care provider? <span className="font-normal">Select the ones that feel right.</span>
           </p>
           <div className="bg-white border border-gray-200 rounded-lg p-4">
             <div className="grid grid-cols-4 gap-4">
-              {['Hypertension', 'Diabetes', 'clean-up help', 'healthy diet',
-                'CPR trained', 'Non-smoker', 'Medication reminder', 'can drive',
-                'Palliative care', 'Willing to live-in', 'Background checked',
-                'Speaks Yoruba', 'Speaks Igbo', 'Speaks Hausa', 'Special Needs experience'
-              ].map(exp => (
+              {['sleep-in', 'Non-smoker', 'Experience with autism', 'can drive',
+                'Special needs experience', 'Experience with twins', 'Supportive', 'Speaks Yoruba Fluently',
+                'Speaks Hausa Fluently', 'Sign language', 'Experience with speech delay', 'cook basic meals',
+                'live-in', 'Behavioral support', 'Speaks French Fluently'].map(exp => (
                 <label key={exp} className="flex items-center">
                   <input 
                     type="checkbox" 
                     className="mr-2 bg-white text-gray-900"
-                    style={{ backgroundColor: '#fff', color: '#222' }}
-                    checked={formData.careProviderExperience.includes(exp)}
+                    checked={formData.careProviderExperience?.includes(exp)}
                     onChange={(e) => {
+                      let arr = Array.isArray(formData.careProviderExperience) ? formData.careProviderExperience : [];
                       if (e.target.checked) {
-                        updateFormData('careProviderExperience', [...formData.careProviderExperience, exp]);
+                        updateFormData('careProviderExperience', [...arr, exp]);
                       } else {
-                        updateFormData('careProviderExperience', formData.careProviderExperience.filter(q => q !== exp));
+                        updateFormData('careProviderExperience', arr.filter(q => q !== exp));
                       }
                     }}
                   />
@@ -74,15 +76,14 @@ function CareProviderExperience({ formData, updateFormData, handleNext }) {
 
         <div>
           <p className="text-sm text-gray-700 mb-4">
-            <strong>Want your care provider to offer more than one type of care?</strong> Select an extra category below.
+            Want your care provider to offer more than one type of care? <span className="font-normal">Select an extra category below.</span>
           </p>
           <select 
             className="w-full p-3 border border-gray-300 rounded-md bg-white text-gray-900"
-            style={{ backgroundColor: '#fff', color: '#222' }}
             value={formData.extraCareCategory}
             onChange={(e) => updateFormData('extraCareCategory', e.target.value)}
           >
-            <option>Select</option>
+            <option>Select category</option>
             <option>Child Care</option>
             <option>Tutoring</option>
             <option>Housekeeping</option>

@@ -15,9 +15,7 @@ function CareProviders({ showSubscribePopup, setShowSubscribePopup }) {
       {/* Header */}
       <div className="flex justify-between items-center px-8 pt-8">
         <h2 className="text-3xl font-semibold text-gray-800">Care Providers near you</h2>
-        <div className="flex items-center">
-          <span className="text-lg text-blue-500 font-bold">Step 8</span> <span className="ml-2 text-lg text-gray-500"> of 8</span>
-        </div>
+        <span className="text-lg text-blue-500 font-bold">Step 8</span> <span className="ml-2 text-lg text-gray-500"> of 8</span>
       </div>
 
       {/* Cards Grid */}
