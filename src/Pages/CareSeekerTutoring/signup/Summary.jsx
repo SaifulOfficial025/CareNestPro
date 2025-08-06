@@ -8,7 +8,6 @@ function Summary({ formData, updateFormData, handleNext, handleBack }) {
           ← 
         </button>
         <h3 className="text-lg text-gray-700 flex-1">Summary</h3>
-        <span className="text-lg text-blue-500">Step 6 of 7</span>
         <span className="text-lg text-blue-500 font-bold">Step 6</span> <span className="ml-2 text-lg text-gray-500"> of 7</span>
       </div>
       <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">

@@ -26,7 +26,10 @@ function CareCategory({ selectedCategory, setSelectedCategory, updateFormData, h
         <h3 className="text-lg text-gray-700">
           What category of Care are you interested in
         </h3>
+        <div className="flex items-center">
         <span className="text-lg text-blue-500 font-bold">Step 1</span> <span className="ml-2 text-lg text-gray-500"> of 7</span>
+
+        </div>
       </div>
       <p className="text-sm text-gray-500 mb-8">
         Kindly select options to help us understand your preferences
