@@ -1,12 +1,29 @@
 import Container from "../../Layout/Container/Container"
+import Academy from "./Academy"
+import Footer from "./Footer"
+import Hero from "./Hero"
+import HowItWorks from "./HowItWorks"
+import Mobile from "./Mobile"
+import Navbar from "./Navbar"
+import Review from "./Review"
+import WhatWeDo from "./WhatWeDo"
+import WhyChooseUs from "./WhyChooseUs"
 
 const Home = () => {
   return (
-    <div>
-      <h2 className="text-3xl font-bold">landing page contain goes here</h2>
-      <Container>
-          <h2 className="text-3xl font-bold">Container Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt animi alias distinctio eligendi doloremque ducimus illum? Sint harum expedita quibusdam voluptate nihil sed porro quam provident! Vitae numquam delectus quasi.</h2>
-      </Container>
+    <div className="dark:bg-white">
+      <Navbar />
+      {/* Hero Section */}
+      <Hero />
+      {/* What We Do Section */}
+      <WhatWeDo />
+      <HowItWorks />
+      <WhyChooseUs />
+      <Academy />
+      <Review />
+      <Mobile />
+      <Footer />
+
     </div>
   )
 }

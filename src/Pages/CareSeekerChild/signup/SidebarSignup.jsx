@@ -20,8 +20,8 @@ function SidebarSignup({ activeStep = 1 }) {
     },
     {
       id: 2,
-      name: "Elderly Information",
-      desc: "Provide your elderly information",
+      name: "Children Information",
+      desc: "Provide your children information",
       icon: (
         <BsExclamationOctagonFill className="text-[#00b3a4] h-5 w-5"/>
       ),
