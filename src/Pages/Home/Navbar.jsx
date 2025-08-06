@@ -7,8 +7,8 @@ function Navbar() {
     { label: 'Care Seeker (Childcare)', link: '/login_care_seeker_child' },
     { label: 'Care Seekers (Elderly care)', link: '/login_care_seeker_elder' },
     { label: 'Care Seekers (Tutoring)', link: '/login_care_seeker_tutoring' },
-    { label: 'Care Seekers (Home keeper)', link: '/dummy-homekeeper' },
-    { label: 'Care Provider (Home Keeper)', link: '/dummy-provider-homekeeper' }
+    { label: 'Care Seekers (Home keeper)', link: '/login_care_seeker_home_keeper' },
+    // { label: 'Care Provider (Home Keeper)', link: '/dummy-provider-homekeeper' }
   ];
 
   // Close dropdown on outside click
