@@ -5,6 +5,7 @@ function TutoringDetails({ formData, updateFormData, handleNext, handleBack, sho
     <>
       {showLocationPopup && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40">
+            
           <div className="bg-white rounded-2xl shadow-xl w-[400px] max-w-full relative flex flex-col">
             <button
               className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-xl font-bold z-10"
@@ -13,6 +14,7 @@ function TutoringDetails({ formData, updateFormData, handleNext, handleBack, sho
             >
               ×
             </button>
+            
             <img src="/mappopup.png" alt="Map Popup" className="w-full h-40 object-cover rounded-t-2xl" />
             <div className="p-8 flex flex-col items-center">
               <h2 className="text-2xl font-semibold text-gray-800 mb-2 text-center">Enable your Location</h2>
@@ -29,6 +31,9 @@ function TutoringDetails({ formData, updateFormData, handleNext, handleBack, sho
       )}
 
       <div className="w-full max-w-4xl mx-auto bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+         <div className="flex items-right justify-end w-full">
+        <span className="text-lg text-blue-500 font-bold">Step 4</span> <span className="ml-2 text-lg text-gray-500"> of 8</span>
+        </div>
         <div className="flex items-center mb-6">
           <button onClick={handleBack} className="mr-4 text-gray-500 hover:text-gray-700">←</button>
           <h3 className="text-lg text-gray-700 flex-1">Tutoring details</h3>
@@ -139,6 +144,7 @@ const CheckboxGroup = ({ label, options, values, onChange }) => {
 
   return (
     <div className="mt-6">
+        
       <label className="block text-sm font-medium text-gray-700 mb-4">{label}</label>
       <div className="grid grid-cols-2 gap-3">
         {options.map((option, idx) => (
