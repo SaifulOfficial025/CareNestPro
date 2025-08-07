@@ -8,6 +8,8 @@ import LoginPageCareSeekerTutoring from "../Pages/CareSeekerTutoring/LoginPage";
 import  SignupPageCareSeekerTutoring from "../Pages/CareSeekerTutoring/signup/Signup";
 import LoginPageCareSeekerHomeKeeper from "../Pages/CareSeekerHomekeeper/LoginPage";
 import  SignupPageCareSeekerHomeKeeper from "../Pages/CareSeekerHomekeeper/signup/Signup";
+import LoginPageCareProviderHomeKeeper from "../Pages/CareProviderHomekeeper/LoginPage";
+import SignupPageCareProviderHomeKeeper from "../Pages/CareProviderHomekeeper/signup/Signup";
 
 export const router = createBrowserRouter([
   {
@@ -45,5 +47,13 @@ export const router = createBrowserRouter([
   {
     path: "/signup_care_seeker_home_keeper",
     element: <SignupPageCareSeekerHomeKeeper />,
+  },
+  {
+    path: "/login_care_provider_home_keeper",
+    element: <LoginPageCareProviderHomeKeeper />,
+  },
+  {
+    path: "/signup_care_provider_home_keeper",
+    element: <SignupPageCareProviderHomeKeeper />,
   }
 ]);

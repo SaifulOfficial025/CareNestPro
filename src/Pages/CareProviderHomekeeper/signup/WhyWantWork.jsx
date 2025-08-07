@@ -1,0 +1,67 @@
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+function WhyWantWork({ handleNext, handleBack }) {
+  const [selectedOption, setSelectedOption] = useState('');
+
+  const options = [
+    "Grow my Business",
+    "Earn extra Income",
+    "I'm passionate about providing care",
+    "All of the Above",
+  ];
+
+  return (
+    <div className="max-w-md mx-auto bg-white p-6 rounded-xl shadow-md mt-8 border border-gray-100">
+      {/* Header */}
+      <div className="flex items-center mb-6">
+        <Link to="/login_care_provider_home_keeper">
+        <button onClick={handleBack} className="mr-4 text-gray-500 hover:text-gray-700">←</button></Link>
+        <h2 className="text-xl font-semibold text-gray-800">Details</h2>
+      </div>
+
+      {/* Question */}
+      <h3 className="text-md font-semibold text-gray-700 mb-4">
+        Why do you want to work with CareNestPro
+      </h3>
+
+      {/* Options */}
+      <div className="space-y-4 mb-6">
+        {options.map((option) => (
+          <label
+            key={option}
+            className={`flex items-center border rounded-lg px-4 py-3 cursor-pointer transition ${
+              selectedOption === option
+                ? 'border-blue-500 bg-blue-50'
+                : 'border-gray-200 hover:border-blue-300'
+            }`}
+          >
+            <input
+              type="radio"
+              name="reason"
+              value={option}
+              checked={selectedOption === option}
+              onChange={() => setSelectedOption(option)}
+              className="mr-3"
+            />
+            <span className="text-gray-700">{option}</span>
+          </label>
+        ))}
+      </div>
+
+      {/* Next Button */}
+      <button
+        onClick={() => handleNext(selectedOption)}
+        disabled={!selectedOption}
+        className={`w-full py-3 rounded-md text-white text-md font-medium transition ${
+          selectedOption
+            ? 'bg-[#0093d1] hover:bg-[#007bb0]'
+            : 'bg-gray-300 cursor-not-allowed'
+        }`}
+      >
+        Next
+      </button>
+    </div>
+  );
+}
+
+export default WhyWantWork;
