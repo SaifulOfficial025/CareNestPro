@@ -19,7 +19,6 @@ function WhyWantWork({ handleNext, handleBack }) {
         <h2 className="text-xl font-semibold text-gray-800">Details</h2>
       <div className="flex items-right justify-end w-full">
         <span className="text-lg text-blue-500 font-bold">Step 1</span> <span className="ml-2 text-lg text-gray-500"> of 8</span>
-
         </div>
       </div>
 
