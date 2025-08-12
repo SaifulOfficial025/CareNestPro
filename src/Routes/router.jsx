@@ -11,6 +11,14 @@ import  SignupPageCareSeekerHomeKeeper from "../Pages/CareSeekerHomekeeper/signu
 import LoginPageCareProviderHomeKeeper from "../Pages/CareProviderHomekeeper/LoginPage";
 import SignupPageCareProviderHomeKeeper from "../Pages/CareProviderHomekeeper/signup/Signup";
 
+
+
+
+
+import CareSeekerLoginPage from "../Pages/CareSeekers/LoginPage"; 
+import CareSeekerSignupPage from "../Pages/CareSeekers/Signup/Signup"; 
+
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -55,5 +63,22 @@ export const router = createBrowserRouter([
   {
     path: "/signup_care_provider_home_keeper",
     element: <SignupPageCareProviderHomeKeeper />,
+  },
+
+
+
+
+
+
+
+
+
+  {
+    path: "/careseekers/login",
+    element: <CareSeekerLoginPage />,
+  },
+  {
+    path: "/careseekers/signup",
+    element: <CareSeekerSignupPage />,
   }
 ]);

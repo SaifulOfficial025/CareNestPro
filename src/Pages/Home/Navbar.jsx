@@ -4,6 +4,10 @@ import CareLogo from "../../../public/CareLogo.png"; // ✅ use your logo path
 function Navbar() {
   const [dropdownOpen, setDropdownOpen] = React.useState(false);
   const dropdownOptions = [
+  { label: 'Care Seeker', link: '/careseekers/login' },
+    { label: 'Care Provider', link: '/login_care_seeker_child' },
+
+
     { label: 'Care Seeker (Childcare)', link: '/login_care_seeker_child' },
     { label: 'Care Seekers (Elderly care)', link: '/login_care_seeker_elder' },
     { label: 'Care Seekers (Tutoring)', link: '/login_care_seeker_tutoring' },

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import CareLogo from "../../../public/CareLogo.png";
+import CareLogo from "../../public/CareLogo.png";
 import { Link } from "react-router-dom";
 
 function LoginPage(handleBack) {

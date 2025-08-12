@@ -6,7 +6,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        tomato: ["Tomato Grotesk", "sans-serif"],
+        sfpro: ["SF Pro Display", "sans-serif"],
+      },
+    },
   },
   plugins: [
     require('daisyui'),

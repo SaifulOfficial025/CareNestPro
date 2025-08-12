@@ -4,8 +4,7 @@ import CareCategory from "./CareCategory";
 import ChildInformation from "./ChildInformation";
 import CareProviderExperience from "./CareProviderExperience";
 import TimeDetails from "./TimeDetails";
-import EmailStep from "./EmailStep";
-import PasswordStep from "./PasswordStep";
+import EmailPasswordStep from "./EmailPasswordStep";
 import Summary from "./Summary";
 import CareProviders from "./CareProviders";
 
@@ -55,9 +54,13 @@ function Signup() {
   });
   const [showLocationPopup, setShowLocationPopup] = useState(false);
   const [showSubscribePopup, setShowSubscribePopup] = useState(false);
+  const [showEmailPasswordPopup, setShowEmailPasswordPopup] = useState(false);
 
   const handleNext = () => {
-    if (currentStep < 8) {
+    // When moving from Summary to CareProviders, trigger email/password popup
+    if (currentStep === 7) {
+      setShowEmailPasswordPopup(true);
+    } else if (currentStep < 8) {
       setCurrentStep(currentStep + 1);
     }
   };
@@ -115,21 +118,9 @@ function Signup() {
           />
         );
       case 5:
-        return (
-          <EmailStep 
-            formData={formData}
-            updateFormData={updateFormData}
-            handleNext={handleNext}
-          />
-        );
+        return null; // EmailPasswordStep handled as popup
       case 6:
-        return (
-          <PasswordStep 
-            formData={formData}
-            updateFormData={updateFormData}
-            handleNext={handleNext}
-          />
-        );
+        return null; // EmailPasswordStep handled as popup
       case 7:
         return (
           <Summary 
@@ -179,6 +170,23 @@ function Signup() {
           </div>
         </div>
       </div>
+
+      {/* Email Password Popup */}
+      {showEmailPasswordPopup && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white rounded-2xl shadow-xl w-[400px] max-w-full p-8">
+            <EmailPasswordStep
+              formData={formData}
+              updateFormData={updateFormData}
+              handleNext={() => {
+                setShowEmailPasswordPopup(false);
+                setCurrentStep(8); // Go to CareProviders
+              }}
+              onClose={() => setShowEmailPasswordPopup(false)}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
