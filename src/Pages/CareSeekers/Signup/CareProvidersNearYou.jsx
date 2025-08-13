@@ -2,7 +2,7 @@ import React from "react";
  import Girl from "../../../../public/girl.svg";
 
 
-function CareProviders() {
+function CareProvidersNearYou() {
   const [showSubscribePopup, setShowSubscribePopup] = React.useState(false);
   const [showPaymentPopup, setShowPaymentPopup] = React.useState(false);
   const [selectedPlan, setSelectedPlan] = React.useState(null);
@@ -302,4 +302,4 @@ function CareProviders() {
   );
 }
 
-export default CareProviders;
+export default CareProvidersNearYou;

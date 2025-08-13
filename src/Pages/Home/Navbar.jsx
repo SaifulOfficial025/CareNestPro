@@ -5,7 +5,7 @@ function Navbar() {
   const [dropdownOpen, setDropdownOpen] = React.useState(false);
   const dropdownOptions = [
   { label: 'Care Seeker', link: '/careseekers/login' },
-    { label: 'Care Provider', link: '/login_care_seeker_child' },
+    { label: 'Care Provider', link: '/careproviders/login' },
 
 
     { label: 'Care Seeker (Childcare)', link: '/login_care_seeker_child' },
