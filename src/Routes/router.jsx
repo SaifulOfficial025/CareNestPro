@@ -10,16 +10,12 @@ import LoginPageCareSeekerHomeKeeper from "../Pages/CareSeekerHomekeeper/LoginPa
 import  SignupPageCareSeekerHomeKeeper from "../Pages/CareSeekerHomekeeper/signup/Signup";
 import LoginPageCareProviderHomeKeeper from "../Pages/CareProviderHomekeeper/LoginPage";
 import SignupPageCareProviderHomeKeeper from "../Pages/CareProviderHomekeeper/signup/Signup";
-
-
-
-
-
 import CareSeekerLoginPage from "../Pages/CareSeekers/LoginPage"; 
 import CareSeekerSignupPage from "../Pages/CareSeekers/Signup/Signup";
 import CareProviderLoginPage from "../Pages/CareProviders/LoginPage";
 import CareProviderSignupPage from "../Pages/CareProviders/Signup/Signup"; 
-
+import CareProvidersNearYouDashboard from "../Pages/CareSeekers/Dashboard/CareProvidersNearYou";
+import ViewDetails from "../Pages/CareSeekers/Dashboard/ViewDetails";
 
 export const router = createBrowserRouter([
   {
@@ -66,15 +62,6 @@ export const router = createBrowserRouter([
     path: "/signup_care_provider_home_keeper",
     element: <SignupPageCareProviderHomeKeeper />,
   },
-
-
-
-
-
-
-
-
-
   {
     path: "/careseekers/login",
     element: <CareSeekerLoginPage />,
@@ -90,5 +77,13 @@ export const router = createBrowserRouter([
   {
     path: "/careproviders/signup",
     element: <CareProviderSignupPage />,
+  },
+  {
+    path: "/careseekers/dashboard",
+    element: <CareProvidersNearYouDashboard />,
+  },
+  {
+    path: "/careseekers/dashboard/details",
+    element: <ViewDetails />,
   }
 ]);
