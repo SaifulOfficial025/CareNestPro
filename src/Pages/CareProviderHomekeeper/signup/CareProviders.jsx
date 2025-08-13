@@ -1,7 +1,14 @@
 import React from "react";
+import EmailPasswordStep from "./EmailPasswordStep";
 // import Girl from "../../../public/girl.svg";
 
 function CareProviders({ showSubscribePopup, setShowSubscribePopup }) {
+  const [showEmailPasswordPopup, setShowEmailPasswordPopup] = React.useState(false);
+  const [formData, setFormData] = React.useState({
+    email: "",
+    password: "",
+    confirmPassword: ""
+  });
   const [showPaymentPopup, setShowPaymentPopup] = React.useState(false);
   const [selectedPlan, setSelectedPlan] = React.useState(null);
   // Example payment details for each plan
@@ -70,7 +77,7 @@ function CareProviders({ showSubscribePopup, setShowSubscribePopup }) {
               <div className="flex space-x-2">
                 <button 
                   className="flex-1 bg-[#0093d1] text-white py-2 rounded-md font-medium hover:bg-[#007bb0] transition"
-                  onClick={() => setShowSubscribePopup(true)}
+                  onClick={() => setShowEmailPasswordPopup(true)}
                 >
                   Interested
                 </button>
@@ -84,44 +91,15 @@ function CareProviders({ showSubscribePopup, setShowSubscribePopup }) {
       </div>
 
       {/* Subscribe Popup */}
-      {showSubscribePopup && !showPaymentPopup && (
+      {showEmailPasswordPopup && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40">
           <div className="bg-white rounded-2xl shadow-xl w-[400px] max-w-full relative flex flex-col items-center p-8">
-            {/* Close Button */}
-            <button
-              className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-xl font-bold z-10"
-              onClick={() => setShowSubscribePopup(false)}
-              aria-label="Close"
-            >
-              ×
-            </button>
-            {/* Illustration */}
-            <img src="/girl.svg" alt="Subscribe Illustration" className="w-32 h-32 mb-4" />
-            <h2 className="text-xl font-semibold text-gray-800 mb-2 text-center">Subscribe to have unlimited<br/>access to Care Provider</h2>
-            <div className="grid grid-cols-3 gap-4 mt-6 w-full">
-              {/* Free */}
-              <div className="bg-white border border-gray-200 rounded-xl p-4 flex flex-col items-center cursor-pointer hover:shadow-lg transition"
-                onClick={() => { setSelectedPlan('Free'); setShowPaymentPopup(true); }}>
-                <div className="text-lg font-bold text-gray-800 mb-1">Free</div>
-                <div className="text-2xl font-bold text-gray-800 mb-1">$00.00</div>
-                <button className="bg-gray-100 text-gray-500 text-xs px-3 py-1 rounded mt-2">Limited</button>
-              </div>
-              {/* Quarterly */}
-              <div className="bg-[#0093d1] border border-[#0093d1] rounded-xl p-4 flex flex-col items-center text-white cursor-pointer hover:shadow-lg transition"
-                onClick={() => { setSelectedPlan('Quarterly'); setShowPaymentPopup(true); }}>
-                <div className="text-lg font-bold mb-1">Quarterly</div>
-                <div className="text-2xl font-bold mb-1">$68.99</div>
-                <div className="text-xs mb-1">($12.22/mo)</div>
-                <button className="bg-white text-[#0093d1] text-xs px-3 py-1 rounded mt-2">32% off</button>
-              </div>
-              {/* Monthly */}
-              <div className="bg-white border border-gray-200 rounded-xl p-4 flex flex-col items-center cursor-pointer hover:shadow-lg transition"
-                onClick={() => { setSelectedPlan('Monthly'); setShowPaymentPopup(true); }}>
-                <div className="text-lg font-bold text-gray-800 mb-1">Monthly</div>
-                <div className="text-2xl font-bold text-gray-800 mb-1">$23.99</div>
-                <button className="bg-blue-50 text-blue-500 text-xs px-3 py-1 rounded mt-2">10% off</button>
-              </div>
-            </div>
+            <EmailPasswordStep
+              formData={formData}
+              updateFormData={(field, value) => setFormData(prev => ({ ...prev, [field]: value }))}
+              handleNext={() => setShowEmailPasswordPopup(false)}
+              onClose={() => setShowEmailPasswordPopup(false)}
+            />
           </div>
         </div>
       )}
