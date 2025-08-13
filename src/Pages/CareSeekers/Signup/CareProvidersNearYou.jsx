@@ -24,7 +24,7 @@ function CareProvidersNearYou() {
     <>
       {/* Signup Blur Overlay */}
       {showSignupPopup && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40 font-sfpro">
           <div className="bg-white rounded-2xl shadow-xl w-[400px] max-w-full p-8 dark:bg-white">
             <img
               src={Girl}
@@ -80,7 +80,7 @@ function CareProvidersNearYou() {
 
       {/* Main Content (Blurred when signup popup is active) */}
       <div
-        className={`w-full bg-white min-h-screen transition ${
+        className={`font-sfpro w-full bg-white min-h-screen transition ${
           showSignupPopup ? "blur-sm pointer-events-none" : ""
         }`}
       >
@@ -90,7 +90,7 @@ function CareProvidersNearYou() {
             Care Providers near you
           </h2>
           <div className="flex items-center">
-            <span className="text-lg text-blue-500 font-bold">Step 8</span>
+            <span className="text-lg text-[#0093d1] font-bold">Step 8</span>
             <span className="ml-2 text-lg text-gray-500"> of 8</span>
           </div>
         </div>
@@ -170,7 +170,7 @@ function CareProvidersNearYou() {
 
       {/* Subscribe Popup */}
       {showSubscribePopup && !showPaymentPopup && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40">
+        <div className="font-sfpro fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40">
           <div className="bg-white rounded-2xl shadow-xl w-[400px] max-w-full relative flex flex-col items-center p-8">
             <button
               className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-xl font-bold z-10"
@@ -235,7 +235,7 @@ function CareProvidersNearYou() {
                 <div className="text-2xl font-bold text-gray-800 mb-1">
                   $23.99
                 </div>
-                <button className="bg-blue-50 text-blue-500 text-xs px-3 py-1 rounded mt-2">
+                <button className="bg-blue-50 text-[#0093d1] text-xs px-3 py-1 rounded mt-2">
                   10% off
                 </button>
               </div>
@@ -246,7 +246,7 @@ function CareProvidersNearYou() {
 
       {/* Payment Popup */}
       {showPaymentPopup && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40">
+        <div className="font-sfpro fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40">
           <div className="bg-white rounded-2xl shadow-xl w-[400px] max-w-full relative flex flex-col items-center p-8">
             <button
               className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-xl font-bold z-10"

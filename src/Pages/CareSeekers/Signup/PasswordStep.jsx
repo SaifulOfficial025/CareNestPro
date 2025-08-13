@@ -10,7 +10,7 @@ function PasswordStep({ formData, updateFormData, onClose, onComplete }) {
   const isValid = formData.password && formData.password === formData.confirmPassword;
 
   return (
-    <div className="w-full">
+    <div className="w-full font-sfpro">
       {/* Close Button */}
       <button
         className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-xl font-bold"
@@ -62,7 +62,7 @@ function PasswordStep({ formData, updateFormData, onClose, onComplete }) {
       
       <div className="mt-4 text-center">
         <span className="text-sm text-gray-500">Already have an account? </span>
-        <a href="#" className="text-blue-500 underline">Sign In</a>
+        <a href="#" className="text-[#0093d1] underline">Sign In</a>
       </div>
     </div>
   );

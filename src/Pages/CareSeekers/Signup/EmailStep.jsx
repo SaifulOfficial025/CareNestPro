@@ -11,7 +11,7 @@ function EmailStep({ formData, updateFormData, onClose, onComplete }) {
     <div className="w-full">
       {/* Close Button */}
       <button
-        className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-xl font-bold"
+        className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-xl font-bold font-sfpro"
         onClick={onClose}
         aria-label="Close"
       >

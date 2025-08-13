@@ -50,7 +50,7 @@ function SidebarSignup({ activeStep = 1, selectedCategory = "" }) {
   const steps = getSteps();
 
   return (
-    <div className="w-90 min-h-screen bg-[#eaf6eb] p-12 flex flex-col fixed left-0 top-0 h-full z-20" style={{ fontFamily: 'Inter, sans-serif', width: '440px' }}>
+    <div className="font-sfpro w-90 min-h-screen bg-[#eaf6eb] p-12 flex flex-col fixed left-0 top-0 h-full z-20" style={{ fontFamily: 'Inter, sans-serif', width: '440px' }}>
       {/* Logo */}
       <div className="flex items-center mb-10">
         <img src="/CareLogo.png" alt="CareNestPro Logo" className="h-12 mr-3" />
@@ -60,7 +60,7 @@ function SidebarSignup({ activeStep = 1, selectedCategory = "" }) {
       </div>
 
       {/* Steps Navigation */}
-      <div className="relative flex flex-col flex-1">
+      <div className="relative flex flex-col flex-1 font-sfpro">
         <ul className="space-y-0">
           {steps.map((step, idx) => (
             <li key={step.id} className="flex items-start relative min-h-[70px]">

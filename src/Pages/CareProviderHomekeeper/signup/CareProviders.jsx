@@ -23,7 +23,7 @@ function CareProviders({ showSubscribePopup, setShowSubscribePopup }) {
       <div className="flex justify-between items-center px-8 pt-8">
         <h2 className="text-3xl font-semibold text-gray-800">Care Providers near you</h2>
         <div className="flex items-center">
-          <span className="text-lg text-blue-500 font-bold">Step 7</span> <span className="ml-2 text-lg text-gray-500"> of 7</span>
+          <span className="text-lg text-[#0093d1] font-bold">Step 7</span> <span className="ml-2 text-lg text-gray-500"> of 7</span>
         </div>
       </div>
 

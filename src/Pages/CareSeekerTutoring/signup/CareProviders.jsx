@@ -16,7 +16,7 @@ function CareProviders({ showSubscribePopup, setShowSubscribePopup }) {
       <div className="flex justify-between items-center px-8 pt-8">
         <h2 className="text-3xl font-semibold text-gray-800">Care Providers near you</h2>
         <div className="flex items-center">
-          <span className="text-lg text-blue-500 font-bold">Step 7</span> <span className="ml-2 text-lg text-gray-500"> of 7</span>
+          <span className="text-lg text-[#0093d1] font-bold">Step 7</span> <span className="ml-2 text-lg text-gray-500"> of 7</span>
         </div>
       </div>
 
@@ -119,7 +119,7 @@ function CareProviders({ showSubscribePopup, setShowSubscribePopup }) {
                 onClick={() => { setSelectedPlan('Monthly'); setShowPaymentPopup(true); }}>
                 <div className="text-lg font-bold text-gray-800 mb-1">Monthly</div>
                 <div className="text-2xl font-bold text-gray-800 mb-1">$23.99</div>
-                <button className="bg-blue-50 text-blue-500 text-xs px-3 py-1 rounded mt-2">10% off</button>
+                <button className="bg-blue-50 text-[#0093d1] text-xs px-3 py-1 rounded mt-2">10% off</button>
               </div>
             </div>
           </div>

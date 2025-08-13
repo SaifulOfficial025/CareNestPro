@@ -2,7 +2,7 @@ import React from "react";
 
 function ElderlyCareProviderExperience({ formData, updateFormData, handleNext, handleBack }) {
   return (
-    <div className="w-full max-w-4xl mx-auto bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+    <div className="w-full max-w-4xl mx-auto bg-white p-8 rounded-2xl shadow-lg border border-gray-100 font-sfpro">
       <div className="flex items-center mb-6">
           <button onClick={handleBack} className="mr-4 text-gray-500 hover:text-gray-700">←</button>
         </div>
@@ -12,7 +12,7 @@ function ElderlyCareProviderExperience({ formData, updateFormData, handleNext, h
           <p className="text-sm text-gray-500">Kindly select options to help us understand your preferences</p>
           <div className="flex items-center">
 
-          <span className="text-lg text-blue-500 font-bold">Step 3</span> <span className="ml-2 text-lg text-gray-500"> of 8</span>
+          <span className="text-lg text-[#0093d1] font-bold">Step 3</span> <span className="ml-2 text-lg text-gray-500"> of 8</span>
           </div>
         </div>
       </div>

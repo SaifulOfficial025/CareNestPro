@@ -437,11 +437,11 @@ function Signup() {
 
       {/* Main Content */}
       <div 
-        className="flex-1 flex items-center justify-center min-h-screen"
+        className="flex-1 flex items-center justify-center min-h-screen font-sfpro"
         style={{ marginLeft: '440px' }}
       >
         <div className="w-full flex flex-col items-center justify-center py-12 px-8">
-          <h2 className="text-4xl font-semibold text-gray-800 mb-8 text-center">
+          <h2 className="text-4xl font-semibold text-gray-800 mb-8 text-center font-sfpro">
             Create an account
           </h2>
           <div className="w-full flex justify-center">

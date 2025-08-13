@@ -10,7 +10,7 @@ function LoginPage(handleBack) {
       {/* Logo + Title */}
       <div className="flex items-center mb-8 space-x-2">
         <img src={CareLogo} alt="CareNestPro Logo" className="h-14" />
-        <h1 className="text-2xl font-semibold text-[#024a68]">
+        <h1 className="text-2xl font-sfpro font-semibold text-[#024a68]">
           CareNest<span className="text-[#00b3a4]">Pro</span>
         </h1>
       </div>
@@ -28,8 +28,8 @@ function LoginPage(handleBack) {
           </Link>
         </div>
 
-        <h2 className="text-xl font-semibold text-gray-800 font-tomato">Log In</h2>
-        <p className="text-gray-500 text-sm mt-1 mb-6">
+        <h2 className="text-2xl font-semibold text-gray-800 font-tomato">Log In</h2>
+        <p className="text-gray-500 text-md mt-1 mb-6 font-sfpro">
           Welcome back, Please enter your login details
         </p>
 
@@ -37,18 +37,18 @@ function LoginPage(handleBack) {
         <form className="space-y-4">
           {/* Email */}
           <div>
-            <label className="block text-sm font-medium  mb-1 text-gray-700">
+            <label className="block text-sm font-medium  mb-1 text-gray-700 font-sfpro ">
               Email Address
             </label>
             <input
               type="email"
               placeholder="Input email address"
-              className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 dark:bg-white dark:text-gray-700"
+              className="font-sfpro w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 dark:bg-white dark:text-gray-700"
             />
           </div>
 
           {/* Password with Eye Icon */}
-          <div>
+          <div className="font-sfpro"> 
             <label className="block text-sm font-medium text-gray-700 mb-1">
               Password
             </label>
@@ -105,7 +105,7 @@ function LoginPage(handleBack) {
                 )}
               </button>
             </div>
-            <a href="#" className="text-xs text-blue-500 mt-1 inline-block">
+            <a href="#" className="text-xs text-[#007bb0] mt-1 inline-block">
               Forgot password?
             </a>
           </div>
@@ -113,17 +113,17 @@ function LoginPage(handleBack) {
           {/* Login Button */}
           <button
             type="submit"
-            className="w-full bg-[#0093d1] text-white font-medium py-2 rounded-md hover:bg-[#007bb0] transition"
+            className="font-sfpro w-full bg-[#0093d1] text-white font-medium py-2 rounded-md hover:bg-[#007bb0] transition"
           >
             Log In
           </button>
         </form>
 
         {/* Sign Up */}
-        <p className="text-center text-sm text-gray-500 mt-6">
+        <p className="text-center text-sm text-gray-500 mt-6 font-sfpro">
           Don't have an account yet?{" "}
           <Link to="/careseekers/signup">
-            <span className="text-blue-500 hover:underline">Sign Up</span>
+            <span className="text-[#007bb0] hover:underline">Sign Up</span>
           </Link>
         </p>
       </div>

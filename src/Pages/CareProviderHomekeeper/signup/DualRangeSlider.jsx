@@ -67,19 +67,19 @@ export default function DualRangeSlider({ valueStart = 80, valueEnd = 1230, minV
         >
           <div className="absolute w-full h-2 bg-gray-200 rounded-full"></div>
           <div 
-            className="absolute h-2 bg-blue-500 rounded-full pointer-events-none"
+            className="absolute h-2 bg-[#0093d1] rounded-full pointer-events-none"
             style={{
               left: `${getPercentage(start)}%`,
               width: `${getPercentage(end) - getPercentage(start)}%`
             }}
           ></div>
           <div
-            className="absolute w-5 h-5 bg-white border-2 border-blue-500 rounded-full shadow-md cursor-grab active:cursor-grabbing transform -translate-x-1/2 z-10"
+            className="absolute w-5 h-5 bg-white border-2 border-[#0093d1] rounded-full shadow-md cursor-grab active:cursor-grabbing transform -translate-x-1/2 z-10"
             style={{ left: `${getPercentage(start)}%` }}
             onMouseDown={e => { e.preventDefault(); setIsDragging('start'); }}
           ></div>
           <div
-            className="absolute w-5 h-5 bg-white border-2 border-blue-500 rounded-full shadow-md cursor-grab active:cursor-grabbing transform -translate-x-1/2 z-10"
+            className="absolute w-5 h-5 bg-white border-2 border-[#0093d1] rounded-full shadow-md cursor-grab active:cursor-grabbing transform -translate-x-1/2 z-10"
             style={{ left: `${getPercentage(end)}%` }}
             onMouseDown={e => { e.preventDefault(); setIsDragging('end'); }}
           ></div>

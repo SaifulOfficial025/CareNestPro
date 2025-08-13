@@ -9,7 +9,7 @@ function EmailPasswordStep({ formData, updateFormData, handleNext, onClose }) {
   };
 
   return (
-    <div className="w-full max-w-md mx-auto bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+    <div className="w-full max-w-md mx-auto bg-white p-8 rounded-2xl shadow-lg border border-gray-100 font-sfpro">
       <div className="flex items-center mb-6">
         <button onClick={onClose} className="mr-4 text-gray-500 hover:text-gray-700">×</button>
       </div>

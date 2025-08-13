@@ -105,7 +105,7 @@ function LoginPage(handleBack) {
                 )}
               </button>
             </div>
-            <a href="#" className="text-xs text-blue-500 mt-1 inline-block">
+            <a href="#" className="text-xs text-[#0093d1] mt-1 inline-block">
               Forgot password?
             </a>
           </div>
@@ -123,7 +123,7 @@ function LoginPage(handleBack) {
         <p className="text-center text-sm text-gray-500 mt-6">
           Don’t have an account yet?{" "}
           <Link to="/signup_care_seeker_child">
-            <span className="text-blue-500 hover:underline">Sign Up</span>
+            <span className="text-[#0093d1] hover:underline">Sign Up</span>
           </Link>
         </p>
       </div>

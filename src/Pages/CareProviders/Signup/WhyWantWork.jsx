@@ -11,13 +11,13 @@ function WhyWantWork({ handleNext, handleBack }) {
   ];
 
   return (
-    <div className="max-w-md mx-auto bg-white p-6 rounded-xl shadow-md mt-8 border border-gray-100">
+    <div className="max-w-md mx-auto bg-white p-6 rounded-xl shadow-md mt-8 border border-gray-100 font-sfpro">
       {/* Header */}
       <div className="flex items-center mb-6">
         <button onClick={handleBack} className="mr-4 text-gray-500 hover:text-gray-700">←</button>
         <h2 className="text-xl font-semibold text-gray-800">Details</h2>
         <div className="flex items-center justify-end w-full">
-          <span className="text-lg text-blue-500 font-bold">Step 1</span> 
+          <span className="text-lg text-[#0093d1] font-bold">Step 1</span> 
           <span className="ml-2 text-lg text-gray-500"> of 4</span>
         </div>
       </div>

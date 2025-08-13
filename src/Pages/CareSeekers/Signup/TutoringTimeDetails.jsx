@@ -9,7 +9,7 @@ function TutoringTimeDetails({ formData, updateFormData, handleNext, handleBack 
           ← 
         </button>
         <h3 className="text-lg text-gray-700 flex-1">Time/Date details</h3>
-        <span className="text-lg text-blue-500 font-bold">Step 3</span> <span className="ml-2 text-lg text-gray-500"> of 7</span>
+        <span className="text-lg text-[#0093d1] font-bold">Step 3</span> <span className="ml-2 text-lg text-gray-500"> of 7</span>
       </div>
       
       <div className="mb-6">

@@ -10,7 +10,7 @@ function LoginPage(handleBack) {
       {/* Logo + Title */}
       <div className="flex items-center mb-8 space-x-2">
         <img src={CareLogo} alt="CareNestPro Logo" className="h-14" />
-        <h1 className="text-2xl font-semibold text-[#024a68]">
+        <h1 className="text-2xl font-semibold text-[#024a68] font-sfpro">
           CareNest<span className="text-[#00b3a4]">Pro</span>
         </h1>
       </div>
@@ -27,13 +27,13 @@ function LoginPage(handleBack) {
           </button>
           </Link>
         </div>
-        <h2 className="text-xl font-semibold text-gray-800">Log In</h2>
-        <p className="text-gray-500 text-sm mt-1 mb-6">
+        <h2 className="text-2xl font-semibold text-gray-800 font-tomato">Log In</h2>
+        <p className="text-gray-500 text-md mt-1 mb-6 font-sfpro">
           Welcome back, Please enter your login details
         </p>
 
         {/* Form */}
-        <form className="space-y-4">
+        <form className="space-y-4 font-sfpro">
           {/* Email */}
           <div>
             <label className="block text-sm font-medium  mb-1 text-gray-700">Email Address</label>
@@ -73,7 +73,7 @@ function LoginPage(handleBack) {
                 )}
               </button>
             </div>
-            <a href="#" className="text-xs text-blue-500 mt-1 inline-block">
+            <a href="#" className="text-xs text-[#0093d1] mt-1 inline-block">
               Forgot password?
             </a>
           </div>
@@ -88,10 +88,10 @@ function LoginPage(handleBack) {
         </form>
 
         {/* Sign Up */}
-        <p className="text-center text-sm text-gray-500 mt-6">
+        <p className="text-center text-sm text-gray-500 mt-6 font-sfpro">
           Don’t have an account yet?{" "}
           <Link to="/careproviders/signup">
-            <span className="text-blue-500 hover:underline">
+            <span className="text-[#0093d1] hover:underline">
               Sign Up
             </span>
           </Link>

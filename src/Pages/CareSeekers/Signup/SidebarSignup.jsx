@@ -160,13 +160,13 @@ function SidebarSignup({ activeStep = 1, selectedCategory = "" }) {
       {/* Logo */}
       <div className="flex items-center mb-10">
         <img src="/CareLogo.png" alt="CareNestPro Logo" className="h-12 mr-3" />
-        <h1 className="text-2xl font-semibold text-[#024a68]">
+        <h1 className="text-2xl  font-sfpro font-semibold  text-[#024a68]">
           CareNest<span className="text-[#00b3a4]">Pro</span>
         </h1>
       </div>
 
       {/* Steps Navigation */}
-      <div className="relative flex flex-col flex-1">
+      <div className="relative flex flex-col flex-1 font-sfpro ">
         <ul className="space-y-0">
           {steps.map((step, idx) => (
             <li key={step.id} className="flex items-start relative min-h-[70px]">

@@ -47,7 +47,7 @@ function HousekeeperInformation({ formData, updateFormData, handleNext, handleBa
         <div className="flex items-center mb-6">
           <button onClick={handleBack} className="mr-4 text-gray-500 hover:text-gray-700">←</button>
           <h3 className="text-lg text-gray-700 flex-1">Housekeeping details</h3>
-          <span className="text-lg text-blue-500 font-bold">Step 2</span>
+          <span className="text-lg text-[#0093d1] font-bold">Step 2</span>
           <span className="ml-2 text-lg text-gray-500"> of 7</span>
         </div>
 

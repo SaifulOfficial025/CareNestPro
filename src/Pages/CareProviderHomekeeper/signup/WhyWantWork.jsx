@@ -18,7 +18,7 @@ function WhyWantWork({ handleNext, handleBack }) {
         <button onClick={handleBack} className="mr-4 text-gray-500 hover:text-gray-700">←</button></Link>
         <h2 className="text-xl font-semibold text-gray-800">Details</h2>
       <div className="flex items-right justify-end w-full">
-        <span className="text-lg text-blue-500 font-bold">Step 1</span> <span className="ml-2 text-lg text-gray-500"> of 8</span>
+        <span className="text-lg text-[#0093d1] font-bold">Step 1</span> <span className="ml-2 text-lg text-gray-500"> of 8</span>
         </div>
       </div>
 
@@ -34,7 +34,7 @@ function WhyWantWork({ handleNext, handleBack }) {
             key={option}
             className={`flex items-center border rounded-lg px-4 py-3 cursor-pointer transition ${
               selectedOption === option
-                ? 'border-blue-500 bg-blue-50'
+                ? 'border-[#0093d1] bg-blue-50'
                 : 'border-gray-200 hover:border-blue-300'
             }`}
           >
