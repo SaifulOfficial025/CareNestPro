@@ -111,7 +111,7 @@ function Requests() {
                 <button
                   key={i}
                   className="w-full text-left bg-gray-50 rounded-lg shadow-sm p-6 mb-4 flex hover:bg-gray-100 transition"
-                  onClick={() => navigate("/careseekers/dashboard/request_details")}
+                  onClick={() => navigate("/careproviders/dashboard/request_details")}
                 >
                   <img src={req.avatar} alt="avatar" className="w-12 h-12 rounded-full mr-4" />
                   <div>

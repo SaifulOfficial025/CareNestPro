@@ -10,6 +10,9 @@ import LoginPageCareSeekerHomeKeeper from "../Pages/CareSeekerHomekeeper/LoginPa
 import  SignupPageCareSeekerHomeKeeper from "../Pages/CareSeekerHomekeeper/signup/Signup";
 import LoginPageCareProviderHomeKeeper from "../Pages/CareProviderHomekeeper/LoginPage";
 import SignupPageCareProviderHomeKeeper from "../Pages/CareProviderHomekeeper/signup/Signup";
+
+
+
 import CareSeekerLoginPage from "../Pages/CareSeekers/LoginPage"; 
 import CareSeekerSignupPage from "../Pages/CareSeekers/Signup/Signup";
 import CareProviderLoginPage from "../Pages/CareProviders/LoginPage";
@@ -23,6 +26,24 @@ import VerifyIdentity from "../Pages/CareSeekers/Dashboard/VerifyIdentity";
 import PersonalInformation from "../Pages/CareSeekers/Dashboard/PersonalInformation";
 import Password from "../Pages/CareSeekers/Dashboard/Password";
 import MessageDetails from "../Pages/CareSeekers/Dashboard/MessageDetails";
+import RequestDetails from "../Pages/CareSeekers/Dashboard/RequestDetails";
+import PersonalInformationProvider from "../Pages/CareProviders/Dashboard/PersonalInformation";
+
+
+
+
+
+import HomePage from "../Pages/CareProviders/Dashboard/HomePage";
+import JobDetails from "../Pages/CareProviders/Dashboard/JobDetails";
+import MessageProvider from "../Pages/CareProviders/Dashboard/Message";
+import RequestsProvider from "../Pages/CareProviders/Dashboard/Requests";
+import RequestDetailsProvider from "../Pages/CareProviders/Dashboard/RequestDetails";
+import SettingsProvider from "../Pages/CareProviders/Dashboard/Settings";
+import VerifyIdentityProvider from "../Pages/CareProviders/Dashboard/VerifyIdentity";
+import PasswordProvider from "../Pages/CareProviders/Dashboard/Password";
+import WalletProvider from "../Pages/CareProviders/Dashboard/Wallet";
+
+
 
 export const router = createBrowserRouter([
   {
@@ -85,6 +106,14 @@ export const router = createBrowserRouter([
     path: "/signup_care_provider_home_keeper",
     element: <SignupPageCareProviderHomeKeeper />,
   },
+
+
+
+
+
+
+
+
   {
     path: "/careseekers/login",
     element: <CareSeekerLoginPage />,
@@ -124,6 +153,59 @@ export const router = createBrowserRouter([
   {
     path: "/careseekers/dashboard/message_provider",
     element: <MessageDetails />,
+  },
+  {
+    path: "/careseekers/dashboard/request_details",
+    element: <RequestDetails />,
+  },
+
+
+
+
+
+
+
+
+
+  {
+    path: "/careproviders/dashboard",
+    element: <HomePage />,
+  },
+  {
+    path: "/careproviders/dashboard/job_details",
+    element: <JobDetails />,
+  },
+  {
+    path: "/careproviders/dashboard/requests",
+    element: <RequestsProvider />,
+  },
+  {
+    path: "/careproviders/dashboard/request_details",
+    element: <RequestDetailsProvider />,
+  },
+  {
+    path: "/careproviders/dashboard/message",
+    element: <MessageProvider />,
+  },
+  {
+    path: "/careproviders/dashboard/setting",
+    element: <SettingsProvider />,
+  },
+  {
+    path: "/careproviders/dashboard/verify_identity",
+    element: <VerifyIdentityProvider />,
+  },
+  {
+    path: "/careproviders/dashboard/personal_information",
+    element: <PersonalInformationProvider />,
+  },
+  {
+    path: "/careproviders/dashboard/password",
+    element: <PasswordProvider />,
+  },
+  {
+    path: "/careproviders/dashboard/wallet",
+    element: <WalletProvider />,
   }
 
 ]);

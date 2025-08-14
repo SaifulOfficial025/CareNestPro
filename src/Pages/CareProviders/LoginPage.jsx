@@ -79,12 +79,14 @@ function LoginPage(handleBack) {
           </div>
 
           {/* Login Button */}
-          <button
-            type="submit"
-            className="w-full bg-[#0093d1] text-white font-medium py-2 rounded-md hover:bg-[#007bb0] transition"
-          >
-            Log In
-          </button>
+          <Link to="/careproviders/dashboard">
+            <button
+              type="submit"
+              className="w-full bg-[#0093d1] text-white font-medium py-2 rounded-md hover:bg-[#007bb0] transition"
+            >
+              Log In
+            </button>
+          </Link>
         </form>
 
         {/* Sign Up */}
