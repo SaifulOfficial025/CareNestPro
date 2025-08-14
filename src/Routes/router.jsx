@@ -16,11 +16,34 @@ import CareProviderLoginPage from "../Pages/CareProviders/LoginPage";
 import CareProviderSignupPage from "../Pages/CareProviders/Signup/Signup"; 
 import CareProvidersNearYouDashboard from "../Pages/CareSeekers/Dashboard/CareProvidersNearYou";
 import ViewDetails from "../Pages/CareSeekers/Dashboard/ViewDetails";
+import Requests from "../Pages/CareSeekers/Dashboard/Requests";
+import Message from "../Pages/CareSeekers/Dashboard/Message";
+import Settings from "../Pages/CareSeekers/Dashboard/Settings";
+import VerifyIdentity from "../Pages/CareSeekers/Dashboard/VerifyIdentity";
+import PersonalInformation from "../Pages/CareSeekers/Dashboard/PersonalInformation";
+import Password from "../Pages/CareSeekers/Dashboard/Password";
+import MessageDetails from "../Pages/CareSeekers/Dashboard/MessageDetails";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+  },
+  {
+    path: "/careseekers/dashboard/settings",
+    element: <Settings />,
+  },
+  {
+    path: "/careseekers/dashboard/verify-identity",
+    element: <VerifyIdentity />,
+  },
+  {
+    path: "/careseekers/dashboard/personal-information",
+    element: <PersonalInformation />,
+  },
+  {
+    path: "/careseekers/dashboard/password",
+    element: <Password />,
   },
   {
     path: "/login_care_seeker_elder",
@@ -85,5 +108,22 @@ export const router = createBrowserRouter([
   {
     path: "/careseekers/dashboard/details",
     element: <ViewDetails />,
+  },
+  {
+    path: "/careseekers/dashboard/requests",
+    element: <Requests />,
+  },
+  {
+    path: "/careseekers/dashboard/message",
+    element: <Message />,
+  },
+  {
+    path: "/careseekers/dashboard/setting",
+    element: <Settings />,
+  },
+  {
+    path: "/careseekers/dashboard/message_provider",
+    element: <MessageDetails />,
   }
+
 ]);

@@ -1,5 +1,6 @@
 import React from "react";
  import Girl from "../../../../public/girl.svg";
+import { Link } from "react-router-dom";
 
 
 function CareProvidersNearYou() {
@@ -283,9 +284,11 @@ function CareProvidersNearYou() {
                 <span>${paymentDetails[selectedPlan]?.total ?? 416}.00</span>
               </div>
             </div>
-            <button className="w-full bg-[#0093d1] text-white py-3 rounded-lg font-semibold text-lg mb-3 hover:bg-[#007bb0] transition">
+            <Link to="/careseekers/dashboard/">
+            <button className="w-full bg-[#0093d1] text-white py-3 px-20 rounded-lg font-semibold text-lg mb-3 hover:bg-[#007bb0] transition">
               Proceed to Payment
             </button>
+            </Link>
             <button
               className="w-full border border-[#0093d1] text-[#0093d1] py-3 rounded-lg font-semibold text-lg hover:bg-blue-50 transition"
               onClick={() => {

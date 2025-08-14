@@ -25,7 +25,7 @@ function CareProvidersNearYou() {
     <div className="flex min-h-screen bg-gray-50">
       <Sidebar active="Home" />
       <div className="flex-1 font-sfpro px-8 py-8 ml-64">
-        {/* Signup Blur Overlay */}
+        {/* Signup Blur Overlay
         {showSignupPopup && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40 font-sfpro">
             <div className="bg-white rounded-2xl shadow-xl w-[400px] max-w-full p-8 dark:bg-white">
@@ -75,23 +75,23 @@ function CareProvidersNearYou() {
               </button>
             </div>
           </div>
-        )}
+        )} */}
 
         {/* Main Content (Blurred when signup popup is active) */}
         <div
-          className={`font-sfpro w-full bg-white min-h-screen transition ${
-            showSignupPopup ? "blur-sm pointer-events-none" : ""
-          }`}
+          // className={`font-sfpro w-full bg-white min-h-screen transition ${
+          //   showSignupPopup ? "blur-sm pointer-events-none" : ""
+          // }`}
         >
           {/* Header */}
           <div className="flex justify-between items-center px-8 pt-8">
             <h2 className="text-3xl font-semibold text-gray-800">
               Care Providers near you
             </h2>
-            <div className="flex items-center">
+            {/* <div className="flex items-center">
               <span className="text-lg text-[#0093d1] font-bold">Step 8</span>
               <span className="ml-2 text-lg text-gray-500"> of 8</span>
-            </div>
+            </div> */}
           </div>
 
           {/* Cards Grid */}
@@ -153,9 +153,9 @@ function CareProvidersNearYou() {
                   <div className="flex space-x-2">
                     <button
                       className="flex-1 bg-[#0093d1] text-white py-2 rounded-md font-medium hover:bg-[#007bb0] transition"
-                      onClick={() => setShowSubscribePopup(true)}
+                      onClick={() => navigate("/careseekers/dashboard/message_provider")}
                     >
-                      Message 
+                      Message
                     </button>
                     <button
                       className="flex-1 border border-[#0093d1] text-[#0093d1] py-2 rounded-md font-medium hover:bg-[#f0fbf9] transition"
