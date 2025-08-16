@@ -142,6 +142,7 @@ function Requests() {
 
 function PendingRequestCard({ req }) {
   const [menuOpen, setMenuOpen] = React.useState(false);
+  const navigate = useNavigate();
   const handleMenu = (e) => {
     e.stopPropagation();
     setMenuOpen((v) => !v);
@@ -155,7 +156,7 @@ function PendingRequestCard({ req }) {
     // Add edit logic here
   };
   return (
-    <div className="bg-gray-50 rounded-lg shadow-sm p-4 mb-4 relative">
+    <div className="bg-gray-50 rounded-lg shadow-sm p-4 mb-4 relative cursor-pointer" onClick={() => navigate('/careseekers/dashboard/summary')}>
       <div className="absolute top-3 right-3">
         <button
           className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-200 focus:outline-none"

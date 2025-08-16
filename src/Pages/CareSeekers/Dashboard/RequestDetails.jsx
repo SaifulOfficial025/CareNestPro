@@ -65,6 +65,7 @@ function RequestDetails() {
           </div>
         </div>
         <button className="w-full bg-[#0d99c9] text-white py-3 rounded-md font-semibold hover:bg-[#007bb0] transition">Submit</button>
+        <p className="text-sm text-red-500 mt-2">after clicking the submit it should go back with a successful alert msg</p>
       </div>
     </div>
   );

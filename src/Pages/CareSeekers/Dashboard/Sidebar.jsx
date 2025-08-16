@@ -5,12 +5,15 @@ import { PiSquaresFour } from "react-icons/pi";
 import { TbTrianglePlus } from "react-icons/tb";
 import { MdMessage } from "react-icons/md";
 import { MdOutlineSettings } from "react-icons/md";
+import Triangle from "../../../../public/triangle.svg"
+import Message from "../../../../public/receipt-text.svg"
+
 
 const navItems = [
-  { label: "Home", icon: <PiSquaresFour /> },
-  { label: "Requests", icon: <TbTrianglePlus /> },
-  { label: "Message", icon: <MdMessage /> },
-  { label: "Setting", icon: <MdOutlineSettings /> },
+  { label: "Home", icon: <PiSquaresFour className="h-6 w-6" /> },
+  { label: "Requests", icon: <img src={Triangle} alt="Triangle Icon" className="h-6 w-6" /> },
+  { label: "Message", icon: <img src={Message} alt="Message Icon" className="h-6 w-6" /> },
+  { label: "Setting", icon: <MdOutlineSettings className="h-6 w-6" /> },
 ];
 
 function Sidebar({ active = "Home", onNav }) {

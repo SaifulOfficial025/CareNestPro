@@ -165,7 +165,7 @@ function CareProvidersNearYou() {
                     </button>
                     <button
                       className="flex-1 border border-[#0093d1] text-[#0093d1] py-2 rounded-md font-medium hover:bg-[#f0fbf9] transition"
-                      onClick={() => navigate("/careseekers/dashboard/details")}
+                      onClick={() => navigate("/careseekers/dashboard/details", { state: { messageable: plan !== "Free" || idx === 0 } })}
                     >
                       View Details
                     </button>

@@ -42,6 +42,7 @@ import SettingsProvider from "../Pages/CareProviders/Dashboard/Settings";
 import VerifyIdentityProvider from "../Pages/CareProviders/Dashboard/VerifyIdentity";
 import PasswordProvider from "../Pages/CareProviders/Dashboard/Password";
 import WalletProvider from "../Pages/CareProviders/Dashboard/Wallet";
+import Summary from "../Pages/CareSeekers/Dashboard/Summary";
 
 
 
@@ -206,6 +207,10 @@ export const router = createBrowserRouter([
   {
     path: "/careproviders/dashboard/wallet",
     element: <WalletProvider />,
+  },
+  {
+    path: "/careseekers/dashboard/summary",
+    element: <Summary />,
   }
 
 ]);

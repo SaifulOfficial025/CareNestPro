@@ -1,9 +1,12 @@
+  // Check plan from localStorage
+  const plan = typeof window !== "undefined" ? localStorage.getItem("careProviderPlan") : null;
 import React from 'react'
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Sidebar from './Sidebar'
 
 function ViewDetails() {
   const navigate = useNavigate();
+  const location = useLocation();
   return (
     <div className="flex min-h-screen bg-gray-50">
       <Sidebar active="Home" />
@@ -23,7 +26,7 @@ function ViewDetails() {
           <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Provider" className="w-16 h-16 rounded-full mr-4 object-cover" />
           <div>
             <h4 className="font-semibold text-gray-800 text-lg">Aleem Sarah</h4>
-            <p className="text-sm text-gray-500">Old Dallas,Salford,UK</p>
+            <p className="text-md text-gray-500 mt-1 mb-2">Old Dallas,Salford,UK</p>
             <p className="text-xs text-gray-500 max-w-2xl">5 years of experience with extensive ways of managing daily routines for multiple children. Skilled in age-appropriate activities, behavioural guidance, and emergency response. Strong communication with parents</p>
           </div>
         </div>
@@ -33,14 +36,16 @@ function ViewDetails() {
             <span className="text-xs text-gray-500">Experience</span>
             <span className="font-semibold text-gray-800 text-lg">8 years</span>
           </div>
-          <div className="bg-white border border-gray-200 rounded-lg px-6 py-3 flex flex-col items-center">
+          <div className="bg-white border border-gray-200 rounded-lg px-6 py-3 flex flex-col items-left">
             <span className="text-xs text-gray-500">Rate</span>
             <span className="font-semibold text-gray-800 text-lg">$135/hr</span>
           </div>
-          <div className="bg-white border border-gray-200 rounded-lg px-6 py-3 flex flex-col items-center">
+          <div className="bg-white border border-gray-200 rounded-lg px-6 py-3 flex flex-col items-left">
             <span className="text-xs text-gray-500">Rating</span>
-            <span className="font-semibold text-[#cb9e49] text-lg">★★★★★</span>
-            <span className="text-xs text-gray-600">5.0</span>
+            <div className='flex items-center'>
+              <span className="text-[#cb9e49] text-base mr-2">★★★★★</span>
+              <span className="text-xs text-gray-600 font-bold">5.0</span>
+            </div>
           </div>
         </div>
         {/* Dedicated Childcare Provider */}
@@ -66,7 +71,15 @@ function ViewDetails() {
             </div>
           </div>
         </div>
-        <button className="w-full bg-[#0093d1] text-white py-3 rounded-md font-semibold text-lg hover:bg-[#007bb0] transition">Message</button>
+        <button
+          className={`w-full bg-[#0093d1] text-white py-3 rounded-md font-semibold text-lg transition ${plan !== "Free" || (location.state && location.state.messageable) ? "hover:bg-[#007bb0]" : "hover:bg-[#0093d1] opacity-50 cursor-not-allowed"}`}
+          disabled={plan === "Free" && !(location.state && location.state.messageable)}
+        >
+          Message
+        </button>
+        <p className="text-sm text-red-500 mt-2">
+          when it is clicked it will go to message page and open a chat for this person
+        </p>
       </div>
     </div>
   )
