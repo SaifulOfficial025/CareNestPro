@@ -2,6 +2,8 @@ import React, { useRef, useState } from "react";
 import Sidebar from "./Sidebar";
 import { useNavigate } from "react-router-dom";
 import { FaFileUpload } from "react-icons/fa";
+import UploadIcon from "../../../../public/upload.svg"; 
+
 
 function VerifyIdentity() {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -40,12 +42,12 @@ function VerifyIdentity() {
         </div>
         <div className="max-w-xl">
           <div className="mb-4 text-gray-700 font-medium">Upload Government ID</div>
-          <div className="bg-white border border-gray-200 rounded-lg flex flex-col items-center justify-center py-16">
-            <FaFileUpload className="text-[#0d99c9] mb-4" size={48} />
+          <div className="w-full mx-auto bg-white border border-gray-200 rounded-lg flex flex-col items-center justify-center py-16">
+            <img src={UploadIcon} alt="Upload Icon" className="mb-4 h-20" />
             {!selectedFile ? (
               <>
                 <button
-                  className="bg-[#0d99c9] text-white px-6 py-2 rounded font-semibold mb-3 hover:bg-[#007bb0]"
+                  className=" text-[#0d99c9] px-6 py-2 rounded text-2xl mb-3 hover:bg-[#007bb0] hover:text-white"
                   onClick={() => fileInputRef.current.click()}
                 >
                   Upload File

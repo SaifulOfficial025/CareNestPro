@@ -105,7 +105,7 @@ function LoginPage(handleBack) {
                 )}
               </button>
             </div>
-            <a href="#" className="text-xs text-[#007bb0] mt-1 inline-block">
+            <a href="#" className="text-xs text-[#007bb0] mt-1 inline-block mt-5 mb-5 ">
               Forgot password?
             </a>
           </div>
