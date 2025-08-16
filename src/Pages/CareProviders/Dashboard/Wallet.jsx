@@ -2,6 +2,7 @@ import React from "react";
 import Sidebar from "./Sidebar";
 import { FaWallet } from "react-icons/fa";
 import { BsDownload } from "react-icons/bs";
+import Pattern from "../../../../public/pattern.svg";
 function Wallet() {
   const transactions = [
     { status: "Wallet funded", date: "07-03-24 | 02:15am", amount: "₦ 3,800.00", positive: true },
@@ -20,13 +21,13 @@ function Wallet() {
           ←
         </button>
         <h2 className="text-2xl font-semibold text-gray-800 mb-8">Wallet History</h2>
-        <div className="bg-[#eaf6fb] rounded-xl p-8 mb-8 flex flex-col items-center" style={{backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'400\' height=\'100\' viewBox=\'0 0 400 100\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Crect width=\'400\' height=\'100\' fill=\'%23eaf6fb\'/%3E%3Cpath d=\'M0 100L400 0V100H0Z\' fill=\'%23d1eaf7\'/%3E%3C/svg%3E")', backgroundRepeat: 'repeat'}}>
+        <div className="bg-[#eaf6fb] rounded-xl p-8 mb-8 flex flex-col items-center" style={{backgroundImage: `url(${Pattern})`}}>
           <div className="flex w-full justify-between items-center mb-6">
             <div className="text-4xl font-bold text-[#0093d1] flex items-center">
               <img src="/NiCurrency.svg" alt="Naira" className="inline-block align-middle mr-2 w-8 h-8" />
               53,589.00
             </div>
-            <div className="text-2xl font-semibold text-[#0093d1]">25</div>
+            <div className="text-5xl font-semibold text-[#0093d1]">25</div>
           </div>
           <div className="flex w-full justify-between items-center mb-6">
             <div className="text-gray-500 text-base">New Care Providers request</div>
@@ -75,8 +76,11 @@ function Wallet() {
                 <span className="font-medium text-gray-700">{tx.status}</span>
               </div>
               <span className="text-gray-400 text-xs">{tx.date}</span>
-              <span className={tx.positive ? "text-green-500 font-semibold flex items-center" : "text-orange-500 font-semibold flex items-center"}>
-                <img src="/NiCurrency.svg" alt="Naira" className="inline-block align-middle mr-1 w-5 h-5" />
+              <span
+                className="font-semibold flex items-center"
+                style={{ color: tx.positive ? '#378c37' : '#a37c39' }}
+              >
+                <img src="/NiCurrency.svg" alt="Naira" className="inline-block align-middle mr-1 w-4 h-4" />
                 {tx.amount.replace(/₦|Naira|N/g, "").trim()}
               </span>
             </div>
