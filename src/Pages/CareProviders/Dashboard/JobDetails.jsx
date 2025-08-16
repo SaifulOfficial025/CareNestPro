@@ -1,7 +1,9 @@
 import React from "react";
 import Sidebar from "./Sidebar";
+import { useNavigate } from "react-router-dom";
 
 function JobDetails() {
+  const navigate = useNavigate();
   return (
     <div className="flex min-h-screen bg-white">
       <Sidebar active="Home" />
@@ -27,7 +29,7 @@ function JobDetails() {
             ))}
           </div>
         </div>
-        <button className="w-full bg-[#0093d1] text-white py-3 rounded-md font-semibold hover:bg-[#007bb0] transition">Apply Now</button>
+        <button className="w-full bg-[#0093d1] text-white py-3 rounded-md font-semibold hover:bg-[#007bb0] transition" onClick={() => navigate('/careproviders/dashboard/requests', { state: { tab: 2 } })}>Apply Now</button>
       </div>
     </div>
   );

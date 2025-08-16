@@ -167,7 +167,7 @@ function EmailPassword(handleBack) {
               </button>
             </div>
             {/* Sign Up */}
-        <p className="text-center text-sm text-gray-500 mt-6">
+        <p className="text-center text-sm text-gray-500 mt-6 mb-5">
           Already have an account?{" "}
           <Link to="/careproviders/login">
             <span className="text-[#0093d1] hover:underline">Log In</span>
@@ -176,12 +176,14 @@ function EmailPassword(handleBack) {
           </div>
 
           {/* Login Button */}
-          <button
-            type="submit"
-            className="w-full bg-[#0093d1] text-white font-medium py-2 rounded-md hover:bg-[#007bb0] transition"
-          >
-            Sign Up
-          </button>
+          <Link to="/careproviders/dashboard">
+            <button
+              type="submit"
+              className="w-full bg-[#0093d1] text-white font-medium py-2 rounded-md hover:bg-[#007bb0] transition"
+            >
+              Sign Up
+            </button>
+          </Link>
         </form>
 
       </div>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Sidebar from "./Sidebar";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const tabs = ["Active", "Closed", "Pending"];
 
@@ -53,7 +53,9 @@ const pendingRequests = [
 ];
 
 function Requests() {
-  const [selectedTab, setSelectedTab] = useState(0);
+  const location = useLocation();
+  const initialTab = location.state && typeof location.state.tab === "number" ? location.state.tab : 0;
+  const [selectedTab, setSelectedTab] = useState(initialTab);
   const navigate = useNavigate();
 
   return (

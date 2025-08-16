@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Sidebar from "./Sidebar";
 
 const messagesList = [
@@ -68,19 +69,26 @@ const chatHistories = [
 ];
 
 function Message() {
+  const navigate = useNavigate();
   const [input, setInput] = useState("");
+  const [search, setSearch] = useState("");
   const [selected, setSelected] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
-    const [showPayment, setShowPayment] = useState(false);
-    const [paymentSuccess, setPaymentSuccess] = useState(false);
-    // Dummy payment data for each message
-    const paymentData = [
-      { rate: 13, hours: 32, fee: 7, total: 416 },
-      { rate: 15, hours: 28, fee: 8, total: 428 },
-      { rate: 12, hours: 40, fee: 6, total: 486 },
-      { rate: 14, hours: 30, fee: 7, total: 427 },
-    ];
-    const paymentDetails = paymentData[selected];
+  const [showPayment, setShowPayment] = useState(false);
+  const [paymentSuccess, setPaymentSuccess] = useState(false);
+  // Dummy payment data for each message
+  const paymentData = [
+    { rate: 13, hours: 32, fee: 7, total: 416 },
+    { rate: 15, hours: 28, fee: 8, total: 428 },
+    { rate: 12, hours: 40, fee: 6, total: 486 },
+    { rate: 14, hours: 30, fee: 7, total: 427 },
+  ];
+  const paymentDetails = paymentData[selected];
+  // Filter messages by search
+  const filteredMessages = messagesList.filter(msg =>
+    msg.name.toLowerCase().includes(search.toLowerCase()) ||
+    msg.text.toLowerCase().includes(search.toLowerCase())
+  );
 
 
   return (
@@ -88,38 +96,48 @@ function Message() {
       <Sidebar active="Message" />
       <div className="flex-1 font-sfpro px-0 py-0 ml-64 flex">
         {/* Left: Messages List */}
-        <div className="w-[340px] border-r border-gray-100 bg-[#f7fafd] flex flex-col">
+        <div className="w-[340px] border-r border-gray-100 bg-[#f3fafc] flex flex-col">
+
           <div className="px-6 py-6 border-b border-gray-100">
+            <div className="flex text-left">
+          <button className="-mt-4 mr-4 text-gray-500 hover:text-[#0d99c9] text-xl" onClick={() => navigate(-1)}>&#8592;</button>
             <h2 className="text-xl font-semibold text-gray-800 mb-4">Messages</h2>
+            </div>
             <input
               type="text"
               placeholder="Search messages"
               className="w-full px-4 py-2 rounded-md border border-gray-200 bg-white text-gray-700 text-sm focus:outline-none"
+              value={search}
+              onChange={e => setSearch(e.target.value)}
             />
           </div>
           <div className="flex-1 overflow-y-auto px-2 pt-2 pb-2">
-            {messagesList.map((msg, i) => (
-              <button
-                key={i}
-                className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition text-left mb-1 hover:bg-[#c5c7ca] focus:outline-none ${selected === i ? "bg-[#c5c7ca]" : ""}`}
-                onClick={() => setSelected(i)}
-              >
-                <img src={msg.avatar} alt="avatar" className="w-10 h-10 rounded-full object-cover" />
-                <div className="flex-1">
-                  <div className="font-medium text-gray-800 text-base">{msg.name}</div>
-                  <div className="text-xs text-gray-500 mt-1">{msg.text}</div>
-                </div>
-                <div className="flex flex-col items-end">
-                  <span className="text-xs text-gray-400">{msg.time}</span>
-                </div>
-              </button>
-            ))}
+            {filteredMessages.length === 0 ? (
+              <div className="text-center text-gray-400 py-8">No messages found</div>
+            ) : (
+              filteredMessages.map((msg, i) => (
+                <button
+                  key={i}
+                  className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition text-left mb-1 hover:bg-[#c5c7ca] focus:outline-none ${selected === i ? "bg-[#c5c7ca]" : ""}`}
+                  onClick={() => setSelected(messagesList.indexOf(msg))}
+                >
+                  <img src={msg.avatar} alt="avatar" className="w-10 h-10 rounded-full object-cover" />
+                  <div className="flex-1">
+                    <div className="font-medium text-gray-800 text-base">{msg.name}</div>
+                    <div className="text-xs text-gray-500 mt-1">{msg.text}</div>
+                  </div>
+                  <div className="flex flex-col items-end">
+                    <span className="text-xs text-gray-400">{msg.time}</span>
+                  </div>
+                </button>
+              ))
+            )}
           </div>
         </div>
         {/* Right: Chat Area */}
         <div className="flex-1 flex flex-col bg-white">
           {/* Chat Header */}
-          <div className="flex items-center px-8 py-6 border-b border-gray-100 bg-[#eaf6fb] relative">
+          <div className="flex items-center px-8 py-6 border-b border-gray-100 bg-[#f3fafc] relative">
             <img src={messagesList[selected].avatar} alt="avatar" className="w-10 h-10 rounded-full mr-3 object-cover" />
             <div className="flex-1 flex items-center">
               <div className="font-semibold text-gray-800 text-lg">{messagesList[selected].name}</div>
@@ -143,7 +161,7 @@ function Message() {
                 <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
                   <button
                     className="w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-100 text-sm"
-                    onClick={() => { setShowPayment(true); setMenuOpen(false); }}
+                    onClick={() => setMenuOpen(false)}
                   >
                     Start a new activity
                   </button>
@@ -223,7 +241,7 @@ function Message() {
           <div className="flex-1 px-8 py-6 overflow-y-auto bg-white">
             {/* Date */}
             <div className="flex justify-center mb-6">
-              <span className="text-xs text-gray-400 bg-[#f7fafd] px-4 py-1 rounded-full">{chatHistories[selected][0]?.date || ""}</span>
+              <span className="text-xs text-gray-400 bg-[#f5f5f5] px-4 py-1 rounded-full">{chatHistories[selected][0]?.date || ""}</span>
             </div>
             {/* Messages */}
             {chatHistories[selected].map((msg, i) => (
@@ -248,7 +266,7 @@ function Message() {
                 )}
                 {msg.type === "info" && (
                   <div className="flex justify-end">
-                    <div className="bg-[#eaf6fb] rounded-2xl px-6 py-4 min-w-[220px] max-w-[320px] flex flex-col items-start shadow-sm">
+                    <div className="bg-[#f5f5f5] rounded-2xl px-6 py-4 min-w-[220px] max-w-[320px] flex flex-col items-start shadow-sm">
                       <span className="text-[#0d99c9] text-md font-medium mb-2">{msg.text}</span>
                       <span className="text-[#0d99c9] text-sm font-normal ml-auto self-end">{msg.time}</span>
                     </div>

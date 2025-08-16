@@ -76,7 +76,7 @@ function ChildCareDetails({ formData, updateFormData, handleNext, handleBack, sh
           <TextField label="Zip Code" value={formData.zipCode} onChange={(val) => updateFormData("zipCode", val)} />
           <CheckboxGroup
   label="Type of child care provider?"
-  options={["Nanny", "Babysitter", "Governess", "Mother’s Helper"]}
+  options={["Nanny", "Babysitter",]}
   values={formData.providerType || []}
   onChange={(val) => updateFormData("providerType", val)}
 />
@@ -108,7 +108,7 @@ function ChildCareDetails({ formData, updateFormData, handleNext, handleBack, sh
 
         
         {/* Age Preference */}
-        <RadioGroup label="Choose the experience level" name="agePreference" options={["Newborn", "Toddler (1-3 years)", "Early School Age (4-6 years)", "Primary school age (7-12 years)", "Teenager (12+ years)"]} value={formData.agePreference} onChange={(val) => updateFormData("agePreference", val)} />
+        <RadioGroup label="Choose the experience level" name="agePreference" options={["Newborn (Up to 12 months)", "Toddler (1-3 years)", "Early School Age (4-6 years)", "Primary school age (7-12 years)", "Teenager (12+ years)"]} value={formData.agePreference} onChange={(val) => updateFormData("agePreference", val)} />
 
         {/* About You */}
         <div className="mt-6">
