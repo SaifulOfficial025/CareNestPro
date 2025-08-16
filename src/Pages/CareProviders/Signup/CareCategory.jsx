@@ -51,7 +51,7 @@ function CareCategory({ selectedCategory, setSelectedCategory, updateFormData, h
                 : "border-gray-200"
             }`}
           >
-            <img src={cat.img} alt={cat.name} className="h-20 mb-4" />
+            <img src={cat.img} alt={cat.name} className="h-30 mb-4" />
             <h4 className="text-lg font-medium text-gray-800">
               {cat.name}
             </h4>

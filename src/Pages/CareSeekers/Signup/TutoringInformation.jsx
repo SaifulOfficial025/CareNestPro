@@ -250,7 +250,7 @@ function TutoringInformation({ formData, updateFormData, handleNext, handleBack,
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">Additional Care</label>
               <div className="bg-white rounded-lg border border-gray-200 p-4">
-                {["Child Care", "Elderly Care", "Tutoring"].map(care => (
+                {["Child Care", "Elderly Care"].map(care => (
                   <label key={care} className="flex items-center py-2 border-b last:border-b-0 border-gray-100">
                     <input
                       type="checkbox"

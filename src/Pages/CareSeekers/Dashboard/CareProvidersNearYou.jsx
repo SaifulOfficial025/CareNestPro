@@ -1,3 +1,5 @@
+  // Check plan from localStorage
+  const plan = typeof window !== "undefined" ? localStorage.getItem("careProviderPlan") : null;
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Girl from "../../../../public/girl.svg";
@@ -97,7 +99,7 @@ function CareProvidersNearYou() {
           {/* Cards Grid */}
           <div className="px-8 pb-8">
             <div className="grid grid-cols-2 gap-6 mt-8">
-              {[1, 2, 3, 4, 5, 6].map((provider) => (
+              {[1, 2, 3, 4, 5, 6].map((provider, idx) => (
                 <div
                   key={provider}
                   className="bg-white border border-gray-200 rounded-2xl p-5 shadow-md hover:shadow-lg transition"
@@ -152,8 +154,12 @@ function CareProvidersNearYou() {
                   {/* Buttons */}
                   <div className="flex space-x-2">
                     <button
-                      className="flex-1 bg-[#0093d1] text-white py-2 rounded-md font-medium hover:bg-[#007bb0] transition"
-                      onClick={() => navigate("/careseekers/dashboard/message_provider")}
+                      className={`flex-1 bg-[#0093d1] text-white py-2 rounded-md font-medium transition ${plan === "Free" && idx !== 0 ? 'opacity-50 cursor-not-allowed hover:bg-[#0093d1]' : 'hover:bg-[#007bb0]'}`}
+                      onClick={() => {
+                        if (plan === "Free" && idx !== 0) return;
+                        navigate("/careseekers/dashboard/message_provider");
+                      }}
+                      disabled={plan === "Free" && idx !== 0}
                     >
                       Message
                     </button>

@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 export default function DualRangeSlider({ valueStart = 80, valueEnd = 1230, minValue = 10, maxValue = 3000, onChange }) {
   const [start, setStart] = useState(valueStart);

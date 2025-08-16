@@ -192,13 +192,15 @@ function CareProvidersNearYou() {
             </h2>
             <div className="grid grid-cols-3 gap-4 mt-6 w-full">
               {/* Free */}
-              <div
-                className="bg-white border border-gray-200 rounded-xl p-4 flex flex-col items-center cursor-pointer hover:shadow-lg transition"
-                onClick={() => {
-                  setSelectedPlan("Free");
-                  setShowPaymentPopup(true);
-                }}
-              >
+                <div
+                  className="bg-white border border-gray-200 rounded-xl p-4 flex flex-col items-center cursor-pointer hover:shadow-lg transition"
+                  onClick={() => {
+                      setSelectedPlan("Free");
+                      setShowSubscribePopup(false);
+                      localStorage.setItem("careProviderPlan", "Free");
+                      window.location.href = "/careseekers/dashboard/";
+                    }}
+                >
                 <div className="text-lg font-bold text-gray-800 mb-1">Free</div>
                 <div className="text-2xl font-bold text-gray-800 mb-1">
                   $00.00
@@ -212,6 +214,7 @@ function CareProvidersNearYou() {
                 className="bg-[#0093d1] border border-[#0093d1] rounded-xl p-4 flex flex-col items-center text-white cursor-pointer hover:shadow-lg transition"
                 onClick={() => {
                   setSelectedPlan("Quarterly");
+                  localStorage.setItem("careProviderPlan", "Quarterly");
                   setShowPaymentPopup(true);
                 }}
               >
@@ -227,6 +230,7 @@ function CareProvidersNearYou() {
                 className="bg-white border border-gray-200 rounded-xl p-4 flex flex-col items-center cursor-pointer hover:shadow-lg transition"
                 onClick={() => {
                   setSelectedPlan("Monthly");
+                  localStorage.setItem("careProviderPlan", "Monthly");
                   setShowPaymentPopup(true);
                 }}
               >
